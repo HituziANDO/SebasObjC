@@ -1,0 +1,104 @@
+//
+//  SebasObjC
+//
+//  MIT License
+//
+//  Copyright (c) 2018-present Hituzi Ando
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+
+#import <CommonCrypto/CommonCrypto.h>
+
+#import "NSString+SebasUtility.h"
+
+@implementation NSString (SebasUtility)
+
+- (UIImage *)util_toQRCodeImage {
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+
+    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+    [filter setDefaults];
+    [filter setValue:data forKey:@"inputMessage"];
+
+    CIImage *outputImage = [filter.outputImage imageByApplyingTransform:CGAffineTransformMakeScale(10.0, 10.0)];
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef cgImage = [context createCGImage:outputImage fromRect:outputImage.extent];
+    UIImage *image = [UIImage imageWithCGImage:cgImage scale:2.f orientation:UIImageOrientationUp];
+
+    CFRelease(cgImage);
+
+    return image;
+}
+
+- (unsigned int)util_toHexInt {
+    unsigned int x;
+    [[NSScanner scannerWithString:self] scanHexInt:&x];
+
+    return x;
+}
+
+- (NSString *)util_toMD5 {
+    if (self.length == 0) {
+        return nil;
+    }
+
+    const char *data = [self UTF8String];
+    CC_LONG len = (CC_LONG) self.length;
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(data, len, result);
+
+    NSMutableString *string = @"".mutableCopy;
+
+    for (int i = 0; i < 16; i++) {
+        [string appendFormat:@"%02X", result[i]];
+    }
+
+    return string;
+}
+
++ (instancetype)util_hexStringWithData:(NSData *)data {
+    const unsigned char *buff = (const unsigned char *) data.bytes;
+
+    if (!buff) {
+        return [NSString string];
+    }
+
+    const NSUInteger len = data.length;
+    NSMutableString *hexStr = [NSMutableString stringWithCapacity:len * 2];
+
+    for (NSInteger i = 0; i < len; i++) {
+        [hexStr appendString:[NSString stringWithFormat:@"%02lx", (unsigned long) buff[i]]];
+    }
+
+    return [NSString stringWithString:hexStr];
+}
+
+- (NSString *)util_replacedString:(NSString *)aString withString:(NSString *)bString {
+    return [[self componentsSeparatedByString:aString] componentsJoinedByString:bString];
+}
+
+- (CGSize)util_sizeWithFont:(UIFont *)font {
+    return [self sizeWithAttributes:@{ NSFontAttributeName: font }];
+}
+
++ (CGFloat)util_heightWithFont:(UIFont *)font {
+    return [[NSString string] sizeWithAttributes:@{ NSFontAttributeName: font }].height;
+}
+
+@end

@@ -1,0 +1,351 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5E7C83E6222FDFC100250717 /* UIColor+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C83DD222FDFC100250717 /* UIColor+SebasUtility.m */; };
+		5E7C83E7222FDFC100250717 /* UIAlertController+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C83DF222FDFC100250717 /* UIAlertController+SebasUtility.m */; };
+		5E7C83E8222FDFC100250717 /* UIDevice+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C83E1222FDFC100250717 /* UIDevice+SebasUtility.m */; };
+		5E7C83E9222FDFC100250717 /* UIImage+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C83E3222FDFC100250717 /* UIImage+SebasUtility.m */; };
+		5E7C83EA222FDFC100250717 /* UIView+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C83E5222FDFC100250717 /* UIView+SebasUtility.m */; };
+		5E946A8522216B72005ABED0 /* NSDate+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E946A7D22216B72005ABED0 /* NSDate+SebasUtility.m */; };
+		5E946A8622216B72005ABED0 /* NSString+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E946A8222216B72005ABED0 /* NSString+SebasUtility.m */; };
+		5E946A8722216B72005ABED0 /* NSArray+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E946A8322216B72005ABED0 /* NSArray+SebasUtility.m */; };
+		5E946A8822216B72005ABED0 /* NSDictionary+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E946A8422216B72005ABED0 /* NSDictionary+SebasUtility.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5E946A6F22216B27005ABED0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5E7C83DC222FDFC100250717 /* UIAlertController+SebasUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+SebasUtility.h"; sourceTree = "<group>"; };
+		5E7C83DD222FDFC100250717 /* UIColor+SebasUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SebasUtility.m"; sourceTree = "<group>"; };
+		5E7C83DE222FDFC100250717 /* UIColor+SebasUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SebasUtility.h"; sourceTree = "<group>"; };
+		5E7C83DF222FDFC100250717 /* UIAlertController+SebasUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+SebasUtility.m"; sourceTree = "<group>"; };
+		5E7C83E0222FDFC100250717 /* UIDevice+SebasUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SebasUtility.h"; sourceTree = "<group>"; };
+		5E7C83E1222FDFC100250717 /* UIDevice+SebasUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+SebasUtility.m"; sourceTree = "<group>"; };
+		5E7C83E2222FDFC100250717 /* UIImage+SebasUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SebasUtility.h"; sourceTree = "<group>"; };
+		5E7C83E3222FDFC100250717 /* UIImage+SebasUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SebasUtility.m"; sourceTree = "<group>"; };
+		5E7C83E4222FDFC100250717 /* UIView+SebasUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SebasUtility.h"; sourceTree = "<group>"; };
+		5E7C83E5222FDFC100250717 /* UIView+SebasUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SebasUtility.m"; sourceTree = "<group>"; };
+		5E946A7122216B27005ABED0 /* libSebasObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSebasObjC.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E946A7D22216B72005ABED0 /* NSDate+SebasUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SebasUtility.m"; sourceTree = "<group>"; };
+		5E946A7E22216B72005ABED0 /* NSDictionary+SebasUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SebasUtility.h"; sourceTree = "<group>"; };
+		5E946A7F22216B72005ABED0 /* NSDate+SebasUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SebasUtility.h"; sourceTree = "<group>"; };
+		5E946A8022216B72005ABED0 /* NSArray+SebasUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SebasUtility.h"; sourceTree = "<group>"; };
+		5E946A8122216B72005ABED0 /* NSString+SebasUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SebasUtility.h"; sourceTree = "<group>"; };
+		5E946A8222216B72005ABED0 /* NSString+SebasUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SebasUtility.m"; sourceTree = "<group>"; };
+		5E946A8322216B72005ABED0 /* NSArray+SebasUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SebasUtility.m"; sourceTree = "<group>"; };
+		5E946A8422216B72005ABED0 /* NSDictionary+SebasUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SebasUtility.m"; sourceTree = "<group>"; };
+		5E946A89222187F6005ABED0 /* SebasObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SebasObjC.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5E946A6E22216B27005ABED0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5E7C83DB222FDFA800250717 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				5E7C83DC222FDFC100250717 /* UIAlertController+SebasUtility.h */,
+				5E7C83DF222FDFC100250717 /* UIAlertController+SebasUtility.m */,
+				5E7C83DE222FDFC100250717 /* UIColor+SebasUtility.h */,
+				5E7C83DD222FDFC100250717 /* UIColor+SebasUtility.m */,
+				5E7C83E0222FDFC100250717 /* UIDevice+SebasUtility.h */,
+				5E7C83E1222FDFC100250717 /* UIDevice+SebasUtility.m */,
+				5E7C83E2222FDFC100250717 /* UIImage+SebasUtility.h */,
+				5E7C83E3222FDFC100250717 /* UIImage+SebasUtility.m */,
+				5E7C83E4222FDFC100250717 /* UIView+SebasUtility.h */,
+				5E7C83E5222FDFC100250717 /* UIView+SebasUtility.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		5E946A6822216B27005ABED0 = {
+			isa = PBXGroup;
+			children = (
+				5E946A7322216B27005ABED0 /* SebasObjC */,
+				5E946A7222216B27005ABED0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5E946A7222216B27005ABED0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E946A7122216B27005ABED0 /* libSebasObjC.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5E946A7322216B27005ABED0 /* SebasObjC */ = {
+			isa = PBXGroup;
+			children = (
+				5E946A8022216B72005ABED0 /* NSArray+SebasUtility.h */,
+				5E946A8322216B72005ABED0 /* NSArray+SebasUtility.m */,
+				5E946A7F22216B72005ABED0 /* NSDate+SebasUtility.h */,
+				5E946A7D22216B72005ABED0 /* NSDate+SebasUtility.m */,
+				5E946A7E22216B72005ABED0 /* NSDictionary+SebasUtility.h */,
+				5E946A8422216B72005ABED0 /* NSDictionary+SebasUtility.m */,
+				5E946A8122216B72005ABED0 /* NSString+SebasUtility.h */,
+				5E946A8222216B72005ABED0 /* NSString+SebasUtility.m */,
+				5E946A89222187F6005ABED0 /* SebasObjC.h */,
+				5E7C83DB222FDFA800250717 /* UIKit */,
+			);
+			path = SebasObjC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5E946A7022216B27005ABED0 /* SebasObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E946A7A22216B27005ABED0 /* Build configuration list for PBXNativeTarget "SebasObjC" */;
+			buildPhases = (
+				5E946A6D22216B27005ABED0 /* Sources */,
+				5E946A6E22216B27005ABED0 /* Frameworks */,
+				5E946A6F22216B27005ABED0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SebasObjC;
+			productName = UtilExtensionsObjC;
+			productReference = 5E946A7122216B27005ABED0 /* libSebasObjC.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5E946A6922216B27005ABED0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Hituzi Ando";
+				TargetAttributes = {
+					5E946A7022216B27005ABED0 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 5E946A6C22216B27005ABED0 /* Build configuration list for PBXProject "SebasObjC" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5E946A6822216B27005ABED0;
+			productRefGroup = 5E946A7222216B27005ABED0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5E946A7022216B27005ABED0 /* SebasObjC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5E946A6D22216B27005ABED0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E7C83E8222FDFC100250717 /* UIDevice+SebasUtility.m in Sources */,
+				5E7C83E9222FDFC100250717 /* UIImage+SebasUtility.m in Sources */,
+				5E7C83E7222FDFC100250717 /* UIAlertController+SebasUtility.m in Sources */,
+				5E7C83E6222FDFC100250717 /* UIColor+SebasUtility.m in Sources */,
+				5E946A8822216B72005ABED0 /* NSDictionary+SebasUtility.m in Sources */,
+				5E946A8522216B72005ABED0 /* NSDate+SebasUtility.m in Sources */,
+				5E946A8622216B72005ABED0 /* NSString+SebasUtility.m in Sources */,
+				5E7C83EA222FDFC100250717 /* UIView+SebasUtility.m in Sources */,
+				5E946A8722216B72005ABED0 /* NSArray+SebasUtility.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5E946A7822216B27005ABED0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s i386 x86_64";
+			};
+			name = Debug;
+		};
+		5E946A7922216B27005ABED0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s i386 x86_64";
+			};
+			name = Release;
+		};
+		5E946A7B22216B27005ABED0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s i386 x86_64";
+			};
+			name = Debug;
+		};
+		5E946A7C22216B27005ABED0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s i386 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E946A6C22216B27005ABED0 /* Build configuration list for PBXProject "SebasObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E946A7822216B27005ABED0 /* Debug */,
+				5E946A7922216B27005ABED0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E946A7A22216B27005ABED0 /* Build configuration list for PBXNativeTarget "SebasObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E946A7B22216B27005ABED0 /* Debug */,
+				5E946A7C22216B27005ABED0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5E946A6922216B27005ABED0 /* Project object */;
+}
