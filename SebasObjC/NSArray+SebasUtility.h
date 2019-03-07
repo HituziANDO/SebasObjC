@@ -29,6 +29,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSArray (SebasUtility)
 /**
+ * Encodes to a JSON.
+ */
+@property (nonatomic, readonly, nullable) NSData *util_toJSON;
+/**
+ * Encodes to a JSON string.
+ */
+@property (nonatomic, copy, readonly, nullable) NSString *util_toJSONString;
+/**
+ * Encodes to a human-readable JSON string.
+ */
+@property (nonatomic, copy, readonly, nullable) NSString *util_toReadableJSONString;
+
+/**
  *
  */
 - (NSArray *)util_filter:(BOOL (^)(id obj, NSUInteger idx))block;

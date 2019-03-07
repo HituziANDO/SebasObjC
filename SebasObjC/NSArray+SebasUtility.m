@@ -27,6 +27,39 @@
 
 @implementation NSArray (SebasUtility)
 
+- (NSData *)util_toJSON {
+    if ([NSJSONSerialization isValidJSONObject:self]) {
+        return [NSJSONSerialization dataWithJSONObject:self options:0 error:nil];
+    }
+    else {
+        return nil;
+    }
+}
+
+- (NSString *)util_toJSONString {
+    if ([NSJSONSerialization isValidJSONObject:self]) {
+        return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:self
+                                                                              options:0
+                                                                                error:nil]
+                                     encoding:NSUTF8StringEncoding];
+    }
+    else {
+        return nil;
+    }
+}
+
+- (NSString *)util_toReadableJSONString {
+    if ([NSJSONSerialization isValidJSONObject:self]) {
+        return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:self
+                                                                              options:NSJSONWritingPrettyPrinted
+                                                                                error:nil]
+                                     encoding:NSUTF8StringEncoding];
+    }
+    else {
+        return nil;
+    }
+}
+
 - (NSArray *)util_filter:(BOOL (^)(id, NSUInteger))block {
     NSMutableArray *arr = [NSMutableArray new];
 
