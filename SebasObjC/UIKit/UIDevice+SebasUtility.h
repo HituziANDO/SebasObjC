@@ -36,6 +36,18 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)util_modelName;
 
 /**
+ * Tells whether current device is iPad.
+ *
+ * @return Returns YES if current device is iPad, otherwise NO.
+ */
++ (BOOL)util_isPad;
+/**
+ * Tells whether current device is iPhone.
+ *
+ * @return Returns YES if current device is iPhone, otherwise NO.
+ */
++ (BOOL)util_isPhone;
+/**
  * Tells whether current device is a simulator.
  *
  * @return Returns YES if current device is a simulator, otherwise NO.

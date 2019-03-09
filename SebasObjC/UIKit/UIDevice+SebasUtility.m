@@ -37,6 +37,14 @@
                               encoding:NSUTF8StringEncoding];
 }
 
++ (BOOL)util_isPad {
+    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
+}
+
++ (BOOL)util_isPhone {
+    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
+}
+
 + (BOOL)util_isSimulator {
 #ifdef TARGET_OS_SIMULATOR
     return TARGET_OS_SIMULATOR != 0;
