@@ -24,6 +24,7 @@
 //  SOFTWARE.
 
 #import "NSArray+SebasUtility.h"
+#import "NSBundle+SebasUtility.h"
 #import "NSDate+SebasUtility.h"
 #import "NSDictionary+SebasUtility.h"
 #import "NSString+SebasUtility.h"
