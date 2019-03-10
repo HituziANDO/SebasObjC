@@ -47,6 +47,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)util_hexStringWithData:(NSData *)data;
 
 /**
+ * Appends the receiver to given file.
+ *
+ * @param path The file to which to append the receiver.
+ * @param encoding The encoding to use for the output.
+ * @return YES if the file is appended successfully, otherwise NO (if the file doesn't exist).
+ */
+- (BOOL)util_appendToFile:(NSString *)path encoding:(NSStringEncoding)encoding;
+/**
  * Appends the receiver to given file if the file exists, otherwise writes to new file.
  *
  * @param path The file to which to write or append the receiver.
@@ -58,10 +66,10 @@ NS_ASSUME_NONNULL_BEGIN
  * If you are not interested in details of errors, you may pass in NULL.
  * @return YES if the file is written or appended successfully, otherwise NO.
  */
-- (BOOL)util_appendToFile:(NSString *)path
-               atomically:(BOOL)atomically
-                 encoding:(NSStringEncoding)encoding
-                    error:(NSError *_Nullable *)error;
+- (BOOL)util_appendOrWriteToFile:(NSString *)path
+                      atomically:(BOOL)atomically
+                        encoding:(NSStringEncoding)encoding
+                           error:(NSError *_Nullable *)error;
 /**
  * Returns new string entirely replaced `aString` with `bString`.
  */

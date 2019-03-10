@@ -89,10 +89,23 @@
     return [NSString stringWithString:hexStr];
 }
 
-- (BOOL)util_appendToFile:(NSString *)path
-               atomically:(BOOL)atomically
-                 encoding:(NSStringEncoding)encoding
-                    error:(NSError *_Nullable *)error {
+- (BOOL)util_appendToFile:(NSString *)path encoding:(NSStringEncoding)encoding {
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        // Append
+        NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:path];
+        [fileHandle seekToEndOfFile];
+        [fileHandle writeData:[self dataUsingEncoding:encoding]];
+
+        return YES;
+    }
+
+    return NO;
+}
+
+- (BOOL)util_appendOrWriteToFile:(NSString *)path
+                      atomically:(BOOL)atomically
+                        encoding:(NSStringEncoding)encoding
+                           error:(NSError *_Nullable *)error {
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
         // Append
