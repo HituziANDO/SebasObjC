@@ -89,6 +89,25 @@
     return [NSString stringWithString:hexStr];
 }
 
+- (BOOL)util_appendToFile:(NSString *)path
+               atomically:(BOOL)atomically
+                 encoding:(NSStringEncoding)encoding
+                    error:(NSError *_Nullable *)error {
+
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        // Append
+        NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:path];
+        [fileHandle seekToEndOfFile];
+        [fileHandle writeData:[self dataUsingEncoding:encoding]];
+
+        return YES;
+    }
+    else {
+        // Create
+        return [self writeToFile:path atomically:atomically encoding:encoding error:error];
+    }
+}
+
 - (NSString *)util_replacedString:(NSString *)aString withString:(NSString *)bString {
     return [[self componentsSeparatedByString:aString] componentsJoinedByString:bString];
 }

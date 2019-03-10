@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (SebasUtility)
 /**
- * Converts the receiver string to the QR Code image.
+ * Converts the receiver to a QR code image.
  */
 @property (nonatomic, readonly) UIImage *util_toQRCodeImage;
 /**
@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, readonly) unsigned int util_toHexInt;
 /**
- * Returns MD5 hash value. If the number of characters is 0, the receiver string returns nil.
+ * Returns MD5 hash value. If the number of characters is 0, the receiver returns nil.
  */
 @property (nonatomic, readonly, nullable) NSString *util_toMD5;
 
@@ -47,11 +47,27 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)util_hexStringWithData:(NSData *)data;
 
 /**
- * Returns a new string entirely replaced `aString` with `bString`.
+ * Appends the receiver to given file if the file exists, otherwise writes to new file.
+ *
+ * @param path The file to which to write or append the receiver.
+ * @param atomically If YES, the receiver is written to an auxiliary file, and then the auxiliary file is renamed to path.
+ * If NO, the receiver is written directly to path. The YES option guarantees that path, if it exists at all,
+ * won’t be corrupted even if the system should crash during writing.
+ * @param encoding The encoding to use for the output.
+ * @param error If there is an error, upon return contains an NSError object that describes the problem.
+ * If you are not interested in details of errors, you may pass in NULL.
+ * @return YES if the file is written or appended successfully, otherwise NO.
+ */
+- (BOOL)util_appendToFile:(NSString *)path
+               atomically:(BOOL)atomically
+                 encoding:(NSStringEncoding)encoding
+                    error:(NSError *_Nullable *)error;
+/**
+ * Returns new string entirely replaced `aString` with `bString`.
  */
 - (NSString *)util_replacedString:(NSString *)aString withString:(NSString *)bString;
 /**
- * Returns the size of the receiver string when specified font is applied.
+ * Returns the size of the receiver when specified font is applied.
  */
 - (CGSize)util_sizeWithFont:(UIFont *)font;
 
