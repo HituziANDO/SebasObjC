@@ -53,7 +53,7 @@
     return x;
 }
 
-- (NSString *)util_toMD5 {
+- (nullable NSString *)util_toMD5 {
     if (self.length == 0) {
         return nil;
     }
@@ -67,6 +67,25 @@
 
     for (int i = 0; i < 16; i++) {
         [string appendFormat:@"%02X", result[i]];
+    }
+
+    return string;
+}
+
+- (nullable NSString *)util_toSHA1 {
+    if (self.length == 0) {
+        return nil;
+    }
+
+    NSData *data = [self dataUsingEncoding:NSASCIIStringEncoding];
+    CC_LONG len = (CC_LONG) data.length;
+    unsigned char result[CC_SHA1_DIGEST_LENGTH];
+    CC_SHA1(data.bytes, len, result);
+
+    NSMutableString *string = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+
+    for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
+        [string appendFormat:@"%02x", result[i]];
     }
 
     return string;

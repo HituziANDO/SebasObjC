@@ -40,6 +40,10 @@ NS_ASSUME_NONNULL_BEGIN
  * Returns MD5 hash value. If the number of characters is 0, the receiver returns nil.
  */
 @property (nonatomic, readonly, nullable) NSString *util_toMD5;
+/**
+ * Returns SHA1 hash value. If the number of characters is 0, the receiver returns nil.
+ */
+@property (nonatomic, readonly, nullable) NSString *util_toSHA1;
 
 /**
  * Converts NSData to hexadecimal character string.
