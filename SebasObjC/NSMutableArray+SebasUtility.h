@@ -27,32 +27,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSDictionary (SebasUtility)
+@interface NSMutableArray (SebasUtility)
 /**
- * Encodes to a JSON.
- */
-@property (nonatomic, readonly, nullable) NSData *util_toJSON;
-/**
- * Encodes to a JSON string.
- */
-@property (nonatomic, copy, readonly, nullable) NSString *util_toJSONString;
-/**
- * Encodes to a human-readable JSON string.
- */
-@property (nonatomic, copy, readonly, nullable) NSString *util_toReadableJSONString;
-/**
- * Converts to a query string: key1=value1&key2=value2...
- */
-@property (nonatomic, copy, readonly) NSString *util_toQueryString;
-
-/**
+ * Returns first object and remove it if the first exists.
  *
+ * @return An object or nil.
  */
-- (NSDictionary *)util_select:(BOOL (^)(id key, id value))block;
-/**
- *
- */
-- (NSArray *)util_map:(id (^)(id key, id value))block;
+- (nullable id)util_shiftObject;
 
 @end
 

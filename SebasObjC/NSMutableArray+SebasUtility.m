@@ -23,37 +23,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "NSMutableArray+SebasUtility.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@implementation NSMutableArray (SebasUtility)
 
-@interface NSDictionary (SebasUtility)
-/**
- * Encodes to a JSON.
- */
-@property (nonatomic, readonly, nullable) NSData *util_toJSON;
-/**
- * Encodes to a JSON string.
- */
-@property (nonatomic, copy, readonly, nullable) NSString *util_toJSONString;
-/**
- * Encodes to a human-readable JSON string.
- */
-@property (nonatomic, copy, readonly, nullable) NSString *util_toReadableJSONString;
-/**
- * Converts to a query string: key1=value1&key2=value2...
- */
-@property (nonatomic, copy, readonly) NSString *util_toQueryString;
+- (nullable id)util_shiftObject {
+    id obj = self.firstObject;
 
-/**
- *
- */
-- (NSDictionary *)util_select:(BOOL (^)(id key, id value))block;
-/**
- *
- */
-- (NSArray *)util_map:(id (^)(id key, id value))block;
+    if (obj) {
+        [self removeObjectAtIndex:0];
+    }
+
+    return obj;
+}
 
 @end
-
-NS_ASSUME_NONNULL_END
