@@ -34,6 +34,18 @@ NS_ASSUME_NONNULL_BEGIN
  * @return An object or nil.
  */
 - (nullable id)util_shiftObject;
+/**
+ * Dequeues an object if the first exists. This method is the alias of `util_shiftObject` method.
+ *
+ * @return An object or nil.
+ */
+- (nullable id)util_dequeueObject;
+/**
+ * Returns last object and remove it if the last exists.
+ *
+ * @return An object or nil.
+ */
+- (nullable id)util_popObject;
 
 @end
 

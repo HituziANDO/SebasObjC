@@ -37,4 +37,18 @@
     return obj;
 }
 
+- (nullable id)util_dequeueObject {
+    return self.util_shiftObject;
+}
+
+- (nullable id)util_popObject {
+    id obj = self.lastObject;
+
+    if (obj) {
+        [self removeLastObject];
+    }
+
+    return obj;
+}
+
 @end
