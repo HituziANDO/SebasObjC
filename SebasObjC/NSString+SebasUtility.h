@@ -29,6 +29,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (SebasUtility)
 /**
+ * Returns UTF8 encoded data.
+ */
+@property (nonatomic, readonly) NSData *util_toUTF8Data;
+/**
+ * Returns UTF16 encoded data.
+ */
+@property (nonatomic, readonly) NSData *util_toUTF16Data;
+/**
+ * Returns ASCII encoded data.
+ */
+@property (nonatomic, readonly) NSData *util_toASCIIData;
+/**
  * Converts the receiver to a QR code image.
  */
 @property (nonatomic, readonly) UIImage *util_toQRCodeImage;

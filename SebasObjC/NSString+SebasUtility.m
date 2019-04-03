@@ -29,6 +29,18 @@
 
 @implementation NSString (SebasUtility)
 
+- (NSData *)util_toUTF8Data {
+    return [self dataUsingEncoding:NSUTF8StringEncoding];
+}
+
+- (NSData *)util_toUTF16Data {
+    return [self dataUsingEncoding:NSUTF16StringEncoding];
+}
+
+- (NSData *)util_toASCIIData {
+    return [self dataUsingEncoding:NSASCIIStringEncoding];
+}
+
 - (UIImage *)util_toQRCodeImage {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
 
