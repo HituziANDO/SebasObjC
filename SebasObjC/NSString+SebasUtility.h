@@ -29,6 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (SebasUtility)
 /**
+ * Tells whether the receiver is empty string or nil.
+ */
+@property (nonatomic, readonly) BOOL util_isEmpty;
+/**
  * Returns UTF8 encoded data.
  */
 @property (nonatomic, readonly) NSData *util_toUTF8Data;

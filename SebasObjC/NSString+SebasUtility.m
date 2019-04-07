@@ -29,6 +29,10 @@
 
 @implementation NSString (SebasUtility)
 
+- (BOOL)util_isEmpty {
+    return self.length <= 0;
+}
+
 - (NSData *)util_toUTF8Data {
     return [self dataUsingEncoding:NSUTF8StringEncoding];
 }
