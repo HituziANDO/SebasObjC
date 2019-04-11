@@ -45,6 +45,8 @@
     return [self dataUsingEncoding:NSASCIIStringEncoding];
 }
 
+#ifdef TARGET_OS_IPHONE
+
 - (UIImage *)util_toQRCodeImage {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
 
@@ -61,6 +63,8 @@
 
     return image;
 }
+
+#endif
 
 - (unsigned int)util_toHexInt {
     unsigned int x;
@@ -160,6 +164,8 @@
     return [[self componentsSeparatedByString:aString] componentsJoinedByString:bString];
 }
 
+#ifdef TARGET_OS_IPHONE
+
 - (CGSize)util_sizeWithFont:(UIFont *)font {
     return [self sizeWithAttributes:@{ NSFontAttributeName: font }];
 }
@@ -167,5 +173,7 @@
 + (CGFloat)util_heightWithFont:(UIFont *)font {
     return [[NSString string] sizeWithAttributes:@{ NSFontAttributeName: font }].height;
 }
+
+#endif
 
 @end

@@ -23,7 +23,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+#import <Foundation/Foundation.h>
+
+#ifdef TARGET_OS_IPHONE
+
 #import <UIKit/UIKit.h>
+
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -44,10 +50,12 @@ NS_ASSUME_NONNULL_BEGIN
  * Returns ASCII encoded data.
  */
 @property (nonatomic, readonly) NSData *util_toASCIIData;
+#ifdef TARGET_OS_IPHONE
 /**
  * Converts the receiver to a QR code image.
  */
 @property (nonatomic, readonly) UIImage *util_toQRCodeImage;
+#endif
 /**
  * Converts the receiver hexadecimal character string to hexadecimal positive number.
  */
@@ -94,6 +102,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Returns new string entirely replaced `aString` with `bString`.
  */
 - (NSString *)util_replacedString:(NSString *)aString withString:(NSString *)bString;
+#ifdef TARGET_OS_IPHONE
 /**
  * Returns the size of the receiver when specified font is applied.
  */
@@ -103,6 +112,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Returns the height when specified font is applied.
  */
 + (CGFloat)util_heightWithFont:(UIFont *)font;
+#endif
 
 @end
 
