@@ -52,16 +52,16 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Creates a NSDate instance in GMT representation with a date-format and a date-string.
  *
- * @param format A date format(e.g. yyyy-MM-dd HH:mm:ss)
- * @param string A date string(e.g. 2019-02-14 10:23:12)
+ * @param format A date format. (e.g. yyyy-MM-dd HH:mm:ss)
+ * @param string A date string. (e.g. 2019-02-14 10:23:12)
  */
 + (nullable instancetype)util_dateWithFormat:(NSString *)format string:(NSString *)string;
 /**
  * Creates a NSDate instance in GMT representation with a date-format and a date-string of given `timeZone` representation.
  *
- * @param format A date format(e.g. yyyy-MM-dd HH:mm:ss)
- * @param string A date string(e.g. 2019-02-14 10:23:12)
- * @param timeZone A time zone of given date string
+ * @param format A date format. (e.g. yyyy-MM-dd HH:mm:ss)
+ * @param string A date string. (e.g. 2019-02-14 10:23:12)
+ * @param timeZone A time zone of given date string.
  */
 + (nullable instancetype)util_dateWithFormat:(NSString *)format
                                       string:(NSString *)string
@@ -69,50 +69,50 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Creates a NSDate instance in GMT representation with given date components.
  *
- * @param dateComponents A date components
+ * @param dateComponents A date components.
  */
 + (nullable instancetype)util_dateWithComponents:(NSDateComponents *)dateComponents;
 
 /**
  * Creates new NSDate instance by adding given date components.
  *
- * @param comps A date components
+ * @param comps A date components.
  */
 - (nullable NSDate *)util_dateByAddingComponents:(NSDateComponents *)comps;
 /**
  * Creates new NSDate instance by adding given second(s).
  *
- * @param second
+ * @param second Seconds.
  */
 - (nullable NSDate *)util_dateByAddingSecond:(NSInteger)second;
 /**
  * Creates new NSDate instance by adding given minute(s).
  *
- * @param minute
+ * @param minute Minutes.
  */
 - (nullable NSDate *)util_dateByAddingMinute:(NSInteger)minute;
 /**
  * Creates new NSDate instance by adding given hour(s).
  *
- * @param hour
+ * @param hour Hours.
  */
 - (nullable NSDate *)util_dateByAddingHour:(NSInteger)hour;
 /**
  * Creates new NSDate instance by adding given day(s).
  *
- * @param day
+ * @param day Days.
  */
 - (nullable NSDate *)util_dateByAddingDay:(NSInteger)day;
 /**
  * Creates new NSDate instance by adding given month(s).
  *
- * @param month
+ * @param month Months.
  */
 - (nullable NSDate *)util_dateByAddingMonth:(NSInteger)month;
 /**
  * Creates new NSDate instance by adding given year(s).
  *
- * @param year
+ * @param year Years.
  */
 - (nullable NSDate *)util_dateByAddingYear:(NSInteger)year;
 

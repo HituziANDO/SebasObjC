@@ -50,20 +50,20 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSData *)util_toJPEGWithQuality:(CGFloat)quality;
 /**
- * Returns the resized image with given size of rect.
+ * Returns resized image with given size of rect.
  *
- * @param rect
- * @param maintainingAspectRatio
- * @return
+ * @param rect A rect.
+ * @param maintainingAspectRatio If YES, maintains aspect ratio.
+ * @return Resized image.
  */
 - (UIImage *)util_resizedWithRect:(CGRect)rect maintainingAspectRatio:(BOOL)maintainingAspectRatio;
 /**
  * Returns the resized image with given size.
  *
- * @param width
- * @param height
- * @param maintainingAspectRatio
- * @return
+ * @param width A width.
+ * @param height A height.
+ * @param maintainingAspectRatio If YES, maintains aspect ratio.
+ * @return Resized image.
  */
 - (UIImage *)util_resizedWithWidth:(CGFloat)width
                             height:(CGFloat)height
@@ -71,15 +71,15 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Returns the cropped image.
  *
- * @param rect
- * @return
+ * @param rect A rect.
+ * @return Cropped image.
  */
 - (UIImage *)util_croppedInRect:(CGRect)rect;
 /**
  * Returns the masked image using given mask image.
  *
- * @param maskImage
- * @return
+ * @param maskImage A mask image.
+ * @return Masked image.
  */
 - (UIImage *)util_maskedWithMaskImage:(UIImage *)maskImage;
 @end
