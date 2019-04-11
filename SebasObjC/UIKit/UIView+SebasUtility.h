@@ -80,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Resizes the receiver view with given scale by the center point.
  *
- * @param scale
+ * @param scale A scale
  */
 - (void)util_scaleByCenter:(CGFloat)scale;
 /**
@@ -99,9 +99,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Animation utility.
  */
-+ (void)util_animate:(void (^)())animations
++ (void)util_animate:(void (^)(void))animations
         withDuration:(NSTimeInterval)duration
-          completion:(nullable void (^)(BOOL finished))completion;
+          completion:(nullable void (^)(BOOL finished))completion DEPRECATED_ATTRIBUTE;
 
 @end
 

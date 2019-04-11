@@ -126,7 +126,7 @@
     return [[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil].firstObject;
 }
 
-+ (void)util_animate:(void (^)())animations
++ (void)util_animate:(void (^)(void))animations
         withDuration:(NSTimeInterval)duration
           completion:(nullable void (^)(BOOL finished))completion {
 
