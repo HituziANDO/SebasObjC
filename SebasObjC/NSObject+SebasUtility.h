@@ -3,7 +3,7 @@
 //
 //  MIT License
 //
-//  Copyright (c) 2018-present Hituzi Ando
+//  Copyright (c) 2019-present Hituzi Ando
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -23,16 +23,40 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import "NSArray+SebasUtility.h"
-#import "NSBundle+SebasUtility.h"
-#import "NSDate+SebasUtility.h"
-#import "NSDictionary+SebasUtility.h"
-#import "NSMutableArray+SebasUtility.h"
-#import "NSObject+SebasUtility.h"
-#import "NSString+SebasUtility.h"
+#import <Foundation/Foundation.h>
 
-#import "UIAlertController+SebasUtility.h"
-#import "UIColor+SebasUtility.h"
-#import "UIDevice+SebasUtility.h"
-#import "UIImage+SebasUtility.h"
-#import "UIView+SebasUtility.h"
+NS_ASSUME_NONNULL_BEGIN
+
+@interface NSObject (SebasUtility)
+/**
+ * Returns the property names of this class.
+ */
+@property (class, nonatomic, copy, readonly) NSArray<NSString *> *util_propertyNames;
+/**
+ * Returns the property list of this class. The representation of the property list is {property name, property type}.
+ */
+@property (class, nonatomic, copy, readonly) NSDictionary<NSString *, NSString *> *util_properties;
+
+/**
+ * Tells whether given `propertyName` is primitive type.
+ *
+ * @param propertyName A property name.
+ * @param propertyType Outputs a type of given property. The symbol of primitive type is following:
+ *
+ *  int = i
+ *  unsigned int = I
+ *  NSInteger = q
+ *  long = q
+ *  long long int = q
+ *  unsigned long long int = Q
+ *  float = f
+ *  double = d
+ *  CGFloat = d
+ *
+ * @return YES if given property is primitive type, otherwise NO.
+ */
++ (BOOL)util_isPrimitiveType:(NSString *)propertyName type:(NSString *_Nullable *_Nullable)propertyType;
+
+@end
+
+NS_ASSUME_NONNULL_END
