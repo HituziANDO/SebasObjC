@@ -3,7 +3,7 @@
 //
 //  MIT License
 //
-//  Copyright (c) 2018-present Hituzi Ando
+//  Copyright (c) 2019-present Hituzi Ando
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -23,17 +23,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import "NSArray+SebasUtility.h"
-#import "NSBundle+SebasUtility.h"
-#import "NSDate+SebasUtility.h"
-#import "NSDictionary+SebasUtility.h"
-#import "NSMutableArray+SebasUtility.h"
-#import "NSObject+SebasUtility.h"
-#import "NSString+SebasUtility.h"
+#import <UIKit/UIKit.h>
 
-#import "UIAlertController+SebasUtility.h"
-#import "UIColor+SebasUtility.h"
-#import "UIDevice+SebasUtility.h"
-#import "UIImage+SebasUtility.h"
-#import "UIView+SebasUtility.h"
-#import "UIViewController+SebasUtility.h"
+NS_ASSUME_NONNULL_BEGIN
+
+@interface UIViewController (SebasUtility)
+/**
+ * Hides the keyboard if opening.
+ */
+- (void)util_hideKeyboard;
+
+@end
+
+NS_ASSUME_NONNULL_END

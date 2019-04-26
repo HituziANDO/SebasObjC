@@ -105,4 +105,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UIView (SebasKeyboardOperating)
+/**
+ * Hides the keyboard if the receiver is kind of `UITextField` class or `UITextView`.
+ */
+- (void)util_hideKeyboard;
+
+@end
+
 NS_ASSUME_NONNULL_END

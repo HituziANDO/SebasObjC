@@ -19,6 +19,7 @@
 		5E946A8722216B72005ABED0 /* NSArray+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E946A8322216B72005ABED0 /* NSArray+SebasUtility.m */; };
 		5E946A8822216B72005ABED0 /* NSDictionary+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E946A8422216B72005ABED0 /* NSDictionary+SebasUtility.m */; };
 		5E94C76D225F812F00081E19 /* NSObject+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E94C76C225F812F00081E19 /* NSObject+SebasUtility.m */; };
+		5EA9A33D227363CA003F94A9 /* UIViewController+SebasUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA9A33C227363CA003F94A9 /* UIViewController+SebasUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,8 @@
 		5E946A89222187F6005ABED0 /* SebasObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SebasObjC.h; sourceTree = "<group>"; };
 		5E94C76B225F812F00081E19 /* NSObject+SebasUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SebasUtility.h"; sourceTree = "<group>"; };
 		5E94C76C225F812F00081E19 /* NSObject+SebasUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SebasUtility.m"; sourceTree = "<group>"; };
+		5EA9A33B227363CA003F94A9 /* UIViewController+SebasUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SebasUtility.h"; sourceTree = "<group>"; };
+		5EA9A33C227363CA003F94A9 /* UIViewController+SebasUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SebasUtility.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				5E7C83E3222FDFC100250717 /* UIImage+SebasUtility.m */,
 				5E7C83E4222FDFC100250717 /* UIView+SebasUtility.h */,
 				5E7C83E5222FDFC100250717 /* UIView+SebasUtility.m */,
+				5EA9A33B227363CA003F94A9 /* UIViewController+SebasUtility.h */,
+				5EA9A33C227363CA003F94A9 /* UIViewController+SebasUtility.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			files = (
 				5E7C83E8222FDFC100250717 /* UIDevice+SebasUtility.m in Sources */,
 				5E7C83E9222FDFC100250717 /* UIImage+SebasUtility.m in Sources */,
+				5EA9A33D227363CA003F94A9 /* UIViewController+SebasUtility.m in Sources */,
 				5E7C83E7222FDFC100250717 /* UIAlertController+SebasUtility.m in Sources */,
 				5E7C83E6222FDFC100250717 /* UIColor+SebasUtility.m in Sources */,
 				5E7C83EF2233CB7600250717 /* NSBundle+SebasUtility.m in Sources */,

@@ -138,3 +138,17 @@
 }
 
 @end
+
+@implementation UIView (SebasKeyboardOperating)
+
+- (void)util_hideKeyboard {
+    if ([self isKindOfClass:[UITextField class]] || [self isKindOfClass:[UITextView class]]) {
+        [self resignFirstResponder];
+    }
+
+    for (UIView *view in self.subviews) {
+        [view util_hideKeyboard];
+    }
+}
+
+@end
