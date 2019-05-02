@@ -27,6 +27,10 @@
 
 @implementation NSArray (SebasUtility)
 
+- (BOOL)util_isEmpty {
+    return self.count <= 0;
+}
+
 - (NSData *)util_toJSON {
     if ([NSJSONSerialization isValidJSONObject:self]) {
         return [NSJSONSerialization dataWithJSONObject:self options:0 error:nil];

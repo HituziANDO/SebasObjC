@@ -57,6 +57,13 @@
     return [UIColor colorWithRed:r / 255.f green:g / 255.f blue:b / 255.f alpha:1.f];
 }
 
++ (UIColor *)util_randomColor {
+    return [UIColor colorWithRed:arc4random_uniform(256) / 255.f
+                           green:arc4random_uniform(256) / 255.f
+                            blue:arc4random_uniform(256) / 255.f
+                           alpha:1.f];
+}
+
 + (UIColor *)util_colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha {
     return [UIColor colorWithRed:red / 255.f green:green / 255.f blue:blue / 255.f alpha:alpha];
 }

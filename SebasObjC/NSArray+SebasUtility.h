@@ -29,6 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSArray (SebasUtility)
 /**
+ * Tells whether the receiver is empty.
+ */
+@property (nonatomic, readonly) BOOL util_isEmpty;
+/**
  * Encodes to a JSON.
  */
 @property (nonatomic, readonly, nullable) NSData *util_toJSON;

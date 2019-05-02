@@ -27,6 +27,10 @@
 
 @implementation NSDictionary (SebasUtility)
 
+- (BOOL)util_isEmpty {
+    return self.count <= 0;
+}
+
 - (NSData *)util_toJSON {
     if ([NSJSONSerialization isValidJSONObject:self]) {
         return [NSJSONSerialization dataWithJSONObject:self options:0 error:nil];
@@ -41,7 +45,7 @@
         return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:self
                                                                               options:0
                                                                                 error:nil]
-            encoding:NSUTF8StringEncoding];
+                                     encoding:NSUTF8StringEncoding];
     }
     else {
         return nil;
@@ -53,7 +57,7 @@
         return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:self
                                                                               options:NSJSONWritingPrettyPrinted
                                                                                 error:nil]
-            encoding:NSUTF8StringEncoding];
+                                     encoding:NSUTF8StringEncoding];
     }
     else {
         return nil;

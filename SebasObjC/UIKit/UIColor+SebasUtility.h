@@ -38,6 +38,12 @@
  */
 + (UIColor *)util_colorWithHex:(NSString *)hex;
 /**
+ * Creates UIColor object at random.
+ *
+ * @return Random color.
+ */
++ (UIColor *)util_randomColor;
+/**
  * Creates UIColor object with RGBA values.
  *
  * @param red 0~255
