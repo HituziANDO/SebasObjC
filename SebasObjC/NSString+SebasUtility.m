@@ -29,8 +29,8 @@
 
 @implementation NSString (SebasUtility)
 
-- (BOOL)util_isEmpty {
-    return self.length <= 0;
+- (BOOL)util_isNotEmpty {
+    return self.length > 0;
 }
 
 - (NSData *)util_toUTF8Data {

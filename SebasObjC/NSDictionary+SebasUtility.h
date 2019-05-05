@@ -29,9 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDictionary (SebasUtility)
 /**
- * Tells whether the receiver is empty.
+ * Tells whether the receiver is not empty dictionary and not nil.
  */
-@property (nonatomic, readonly) BOOL util_isEmpty;
+@property (nonatomic, readonly) BOOL util_isNotEmpty;
 /**
  * Encodes to a JSON.
  */

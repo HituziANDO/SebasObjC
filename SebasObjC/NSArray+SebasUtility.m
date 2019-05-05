@@ -27,8 +27,8 @@
 
 @implementation NSArray (SebasUtility)
 
-- (BOOL)util_isEmpty {
-    return self.count <= 0;
+- (BOOL)util_isNotEmpty {
+    return self.count > 0;
 }
 
 - (NSData *)util_toJSON {
