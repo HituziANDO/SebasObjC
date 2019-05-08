@@ -111,6 +111,16 @@
     return string;
 }
 
+- (NSString *)util_secureText {
+    NSMutableString *string = [NSMutableString new];
+
+    for (NSInteger i = 0; i < self.length; i++) {
+        [string appendString:@"*"];
+    }
+
+    return string;
+}
+
 + (instancetype)util_hexStringWithData:(NSData *)data {
     const unsigned char *buff = (const unsigned char *) data.bytes;
 

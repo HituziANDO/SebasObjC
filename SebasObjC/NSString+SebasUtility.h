@@ -68,6 +68,10 @@ NS_ASSUME_NONNULL_BEGIN
  * Returns SHA1 hash value. If the number of characters is 0, the receiver returns nil.
  */
 @property (nonatomic, readonly, nullable) NSString *util_toSHA1;
+/**
+ * Converts the receiver to secure text. e.g.) "******"
+ */
+@property (nonatomic, copy, readonly) NSString *util_secureText;
 
 /**
  * Converts NSData to hexadecimal character string.
