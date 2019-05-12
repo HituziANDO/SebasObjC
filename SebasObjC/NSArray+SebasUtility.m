@@ -175,7 +175,7 @@
         return nil;
     }
 
-    return self[arc4random_uniform(self.count)];
+    return self[arc4random_uniform((uint32_t) self.count)];
 }
 
 @end
