@@ -50,12 +50,6 @@ NS_ASSUME_NONNULL_BEGIN
  * Returns ASCII encoded data.
  */
 @property (nonatomic, readonly) NSData *util_toASCIIData;
-#ifdef TARGET_OS_IPHONE
-/**
- * Converts the receiver to a QR code image.
- */
-@property (nonatomic, readonly) UIImage *util_toQRCodeImage;
-#endif
 /**
  * Converts the receiver hexadecimal character string to hexadecimal positive number.
  */
@@ -71,7 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Converts the receiver to secure text. e.g.) "******"
  */
-@property (nonatomic, copy, readonly) NSString *util_secureText;
+@property (nonatomic, copy, readonly) NSString *util_toSecureText;
 
 /**
  * Converts NSData to hexadecimal character string.
@@ -106,7 +100,30 @@ NS_ASSUME_NONNULL_BEGIN
  * Returns new string entirely replaced `aString` with `bString`.
  */
 - (NSString *)util_replacedString:(NSString *)aString withString:(NSString *)bString;
+/**
+ * Returns new string truncated to given length.
+ *
+ * @param length The maximum length to truncate.
+ */
+- (NSString *)util_truncatedToLength:(NSUInteger)length;
+/**
+ * Returns new string truncated to given length and adding given string to the trailing.
+ *
+ * @param length The maximum length to truncate.
+ * @param trailing The string added to the trailing. If nil, adds @"..." to the trailing.
+ */
+- (NSString *)util_truncatedToLength:(NSUInteger)length withTrailing:(nullable NSString *)trailing;
+
+@end
+
 #ifdef TARGET_OS_IPHONE
+
+@interface NSString (SebasUtility_iOS)
+/**
+ * Converts the receiver to a QR code image.
+ */
+@property (nonatomic, readonly) UIImage *util_toQRCodeImage;
+
 /**
  * Returns the size of the receiver when specified font is applied.
  */
@@ -116,8 +133,9 @@ NS_ASSUME_NONNULL_BEGIN
  * Returns the height when specified font is applied.
  */
 + (CGFloat)util_heightWithFont:(UIFont *)font;
-#endif
 
 @end
+
+#endif
 
 NS_ASSUME_NONNULL_END

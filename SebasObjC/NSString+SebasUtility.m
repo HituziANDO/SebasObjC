@@ -45,27 +45,6 @@
     return [self dataUsingEncoding:NSASCIIStringEncoding];
 }
 
-#ifdef TARGET_OS_IPHONE
-
-- (UIImage *)util_toQRCodeImage {
-    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
-
-    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
-    [filter setDefaults];
-    [filter setValue:data forKey:@"inputMessage"];
-
-    CIImage *outputImage = [filter.outputImage imageByApplyingTransform:CGAffineTransformMakeScale(10.0, 10.0)];
-    CIContext *context = [CIContext contextWithOptions:nil];
-    CGImageRef cgImage = [context createCGImage:outputImage fromRect:outputImage.extent];
-    UIImage *image = [UIImage imageWithCGImage:cgImage scale:2.f orientation:UIImageOrientationUp];
-
-    CFRelease(cgImage);
-
-    return image;
-}
-
-#endif
-
 - (unsigned int)util_toHexInt {
     unsigned int x;
     [[NSScanner scannerWithString:self] scanHexInt:&x];
@@ -111,7 +90,7 @@
     return string;
 }
 
-- (NSString *)util_secureText {
+- (NSString *)util_toSecureText {
     NSMutableString *string = [NSMutableString new];
 
     for (NSInteger i = 0; i < self.length; i++) {
@@ -174,7 +153,38 @@
     return [[self componentsSeparatedByString:aString] componentsJoinedByString:bString];
 }
 
+- (NSString *)util_truncatedToLength:(NSUInteger)length {
+    return [self util_truncatedToLength:length withTrailing:@""];
+}
+
+- (NSString *)util_truncatedToLength:(NSUInteger)length withTrailing:(nullable NSString *)trailing {
+    NSRange range = [self rangeOfComposedCharacterSequencesForRange:(NSRange) { 0, MIN(self.length, length) }];
+
+    return [NSString stringWithFormat:@"%@%@", [self substringWithRange:range], trailing ?: @"..."];
+}
+
+@end
+
 #ifdef TARGET_OS_IPHONE
+
+@implementation NSString (SebasUtility_iOS)
+
+- (UIImage *)util_toQRCodeImage {
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+
+    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+    [filter setDefaults];
+    [filter setValue:data forKey:@"inputMessage"];
+
+    CIImage *outputImage = [filter.outputImage imageByApplyingTransform:CGAffineTransformMakeScale(10.0, 10.0)];
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef cgImage = [context createCGImage:outputImage fromRect:outputImage.extent];
+    UIImage *image = [UIImage imageWithCGImage:cgImage scale:2.f orientation:UIImageOrientationUp];
+
+    CFRelease(cgImage);
+
+    return image;
+}
 
 - (CGSize)util_sizeWithFont:(UIFont *)font {
     return [self sizeWithAttributes:@{ NSFontAttributeName: font }];
@@ -184,6 +194,6 @@
     return [[NSString string] sizeWithAttributes:@{ NSFontAttributeName: font }].height;
 }
 
-#endif
-
 @end
+
+#endif
