@@ -23,9 +23,22 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+#import <objc/runtime.h>
+
 #import "NSDate+SebasUtility.h"
 
 @implementation NSDate (SebasUtility)
+
++ (NSCalendar *)util_defaultCalendar {
+    NSCalendarIdentifier calendarID = objc_getAssociatedObject(self,
+                                                               @"sebas_defaultCalendarID") ?: NSCalendarIdentifierGregorian;
+
+    return [[NSCalendar alloc] initWithCalendarIdentifier:calendarID];
+}
+
++ (void)util_setDefaultCalendarID:(NSCalendarIdentifier)calendarID {
+    objc_setAssociatedObject(self, @"sebas_defaultCalendarID", calendarID, OBJC_ASSOCIATION_RETAIN);
+}
 
 + (nullable instancetype)util_dateWithFormat:(NSString *)format string:(NSString *)string {
     return [self util_dateWithFormat:format string:string ofTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
@@ -38,29 +51,27 @@
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.dateFormat = format;
     formatter.timeZone = timeZone;
+    formatter.calendar = self.util_defaultCalendar;
 
     return [formatter dateFromString:string];
 }
 
 + (nullable instancetype)util_dateWithComponents:(NSDateComponents *)dateComponents {
-    return [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]
-                         dateFromComponents:dateComponents];
+    return [dateComponents.calendar dateFromComponents:dateComponents];
 }
 
 - (NSDateComponents *)util_toDateComponents {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-
-    return [calendar components:NSCalendarUnitYear |
+    return [NSDate.util_defaultCalendar components:NSCalendarUnitYear |
                 NSCalendarUnitMonth |
                 NSCalendarUnitDay |
                 NSCalendarUnitHour |
                 NSCalendarUnitMinute |
                 NSCalendarUnitSecond
-                       fromDate:self];
+                                          fromDate:self];
 }
 
 - (nullable NSDate *)util_beginningOfDay {
-    return [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian] startOfDayForDate:self];
+    return [NSDate.util_defaultCalendar startOfDayForDate:self];
 }
 
 - (nullable NSDate *)util_endOfDay {
@@ -68,14 +79,11 @@
     comps.day = 1;
     comps.second = -1;
 
-    return [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]
-                         dateByAddingComponents:comps
-                                         toDate:self.util_beginningOfDay
-                                        options:0];
+    return [NSDate.util_defaultCalendar dateByAddingComponents:comps toDate:self.util_beginningOfDay options:0];
 }
 
 - (nullable NSDate *)util_beginningOfMonth {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSCalendar *calendar = NSDate.util_defaultCalendar;
     NSDateComponents *comps = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth fromDate:self];
 
     return [calendar dateFromComponents:comps];
@@ -86,10 +94,7 @@
     comps.month = 1;
     comps.second = -1;
 
-    return [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]
-                         dateByAddingComponents:comps
-                                         toDate:self.util_beginningOfMonth
-                                        options:0];
+    return [NSDate.util_defaultCalendar dateByAddingComponents:comps toDate:self.util_beginningOfMonth options:0];
 }
 
 - (nullable NSDate *)util_dateByAddingComponents:(NSDateComponents *)comps {
@@ -97,10 +102,7 @@
         comps = [NSDateComponents new];
     }
 
-    return [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]
-                         dateByAddingComponents:comps
-                                         toDate:self
-                                        options:0];
+    return [NSDate.util_defaultCalendar dateByAddingComponents:comps toDate:self options:0];
 }
 
 - (nullable NSDate *)util_dateByAddingSecond:(NSInteger)second {

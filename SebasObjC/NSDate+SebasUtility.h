@@ -29,6 +29,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDate (SebasUtility)
 /**
+ * Returns used calendar. Default calendar is gregorian.
+ */
++ (NSCalendar *)util_defaultCalendar;
+/**
+ * Sets the ID of used calendar.
+ *
+ * @param calendarID NSCalendarIdentifier
+ */
++ (void)util_setDefaultCalendarID:(NSCalendarIdentifier)calendarID;
+/**
  * Converts the receiver to NSDateComponents.
  */
 @property (nonatomic, readonly) NSDateComponents *util_toDateComponents;
