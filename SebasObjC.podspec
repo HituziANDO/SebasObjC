@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SebasObjC"
-  s.version      = "1.13.1"
+  s.version      = "1.13.2"
   s.summary      = "Utility Extensions written in Objective-C."
   s.description  = <<-DESC
 SebasObjC is utility extensions written in Objective-C for iOS.

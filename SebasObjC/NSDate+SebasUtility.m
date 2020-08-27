@@ -57,7 +57,12 @@
 }
 
 + (nullable instancetype)util_dateWithComponents:(NSDateComponents *)dateComponents {
-    return [dateComponents.calendar dateFromComponents:dateComponents];
+    if (dateComponents.calendar) {
+        return [dateComponents.calendar dateFromComponents:dateComponents];
+    }
+    else {
+        return [[self util_defaultCalendar] dateFromComponents:dateComponents];
+    }
 }
 
 - (NSDateComponents *)util_toDateComponents {
