@@ -23,18 +23,24 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import "NSArray+SebasUtility.h"
-#import "NSBundle+SebasUtility.h"
-#import "NSDate+SebasUtility.h"
-#import "NSDictionary+SebasUtility.h"
-#import "NSFileManager+SebasUtility.h"
-#import "NSMutableArray+SebasUtility.h"
-#import "NSObject+SebasUtility.h"
-#import "NSString+SebasUtility.h"
+#import <Foundation/Foundation.h>
 
-#import "UIAlertController+SebasUtility.h"
-#import "UIColor+SebasUtility.h"
-#import "UIDevice+SebasUtility.h"
-#import "UIImage+SebasUtility.h"
-#import "UIView+SebasUtility.h"
-#import "UIViewController+SebasUtility.h"
+NS_ASSUME_NONNULL_BEGIN
+
+@interface NSFileManager (SebasUtility)
+/**
+ * Copies the item at specified path. If the item to the destination exists, overwrites it.
+ */
+- (BOOL)util_copyItemAtPath:(NSString *)srcPath
+                     toPath:(NSString *)dstPath
+                      error:(NSError *_Nullable *)error;
+/**
+ * Copies the item at specified URL. If the item to the destination exists, overwrites it.
+ */
+- (BOOL)util_copyItemAtURL:(NSURL *)srcURL
+                     toURL:(NSURL *)dstURL
+                     error:(NSError * _Nullable *)error;
+
+@end
+
+NS_ASSUME_NONNULL_END

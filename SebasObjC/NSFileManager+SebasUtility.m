@@ -23,18 +23,34 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import "NSArray+SebasUtility.h"
-#import "NSBundle+SebasUtility.h"
-#import "NSDate+SebasUtility.h"
-#import "NSDictionary+SebasUtility.h"
 #import "NSFileManager+SebasUtility.h"
-#import "NSMutableArray+SebasUtility.h"
-#import "NSObject+SebasUtility.h"
-#import "NSString+SebasUtility.h"
 
-#import "UIAlertController+SebasUtility.h"
-#import "UIColor+SebasUtility.h"
-#import "UIDevice+SebasUtility.h"
-#import "UIImage+SebasUtility.h"
-#import "UIView+SebasUtility.h"
-#import "UIViewController+SebasUtility.h"
+@implementation NSFileManager (SebasUtility)
+
+- (BOOL)util_copyItemAtPath:(NSString *)srcPath
+                     toPath:(NSString *)dstPath
+                      error:(NSError * _Nullable *)error {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    if ([fileManager fileExistsAtPath:dstPath]) {
+        if (![fileManager removeItemAtPath:dstPath error:error]) {
+            return NO;
+        }
+    }
+    return [fileManager copyItemAtPath:srcPath toPath:dstPath error:error];
+}
+
+- (BOOL)util_copyItemAtURL:(NSURL *)srcURL
+                     toURL:(NSURL *)dstURL
+                     error:(NSError * _Nullable *)error {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    if ([fileManager fileExistsAtPath:dstURL.path]) {
+        if (![fileManager removeItemAtURL:dstURL error:error]) {
+            return NO;
+        }
+    }
+    return [fileManager copyItemAtURL:srcURL toURL:dstURL error:error];
+}
+
+@end
